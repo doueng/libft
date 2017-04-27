@@ -6,7 +6,7 @@
 /*   By: dengstra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/04/25 14:50:20 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/04/27 16:26:00 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
-void				ft_swap(void *a, void *b);
+void				ft_swap(void *a, void *b, int size);
 void				ft_sort_integer_table(int *tab, int size);
 int					ft_sqrt(int nb);
 void				ft_foreach(int *tab, int length, void (*f)(int));
