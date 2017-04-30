@@ -28,7 +28,7 @@ void	ft_sort_integer_table(int *tab, int size)
 		{
 			if (tab[i] > tab[i + 1])
 			{
-				ft_swap(&tab[i], &tab[i + 1]);
+				ft_swap(&tab[i], &tab[i + 1], 1);
 				sorts++;
 			}
 			i++;
