@@ -6,7 +6,7 @@
 /*   By: dengstra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 23:40:57 by dengstra          #+#    #+#             */
-/*   Updated: 2017/04/23 17:50:36 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/05/09 14:31:36 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_sort_integer_table(int *tab, int size)
 		{
 			if (tab[i] > tab[i + 1])
 			{
-				ft_swap(&tab[i], &tab[i + 1], 1);
+				ft_swap(&tab[i], &tab[i + 1], sizeof(int));
 				sorts++;
 			}
 			i++;
