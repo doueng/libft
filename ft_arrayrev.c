@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_arrayrev.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 21:58:25 by dengstra          #+#    #+#             */
-/*   Updated: 2017/05/14 12:05:18 by douglas          ###   ########.fr       */
+/*   Created: 2017/05/14 12:09:45 by douglas           #+#    #+#             */
+/*   Updated: 2017/05/14 12:09:48 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+void	*ft_arrayrev(void *a, size_t size, size_t len)
 {
-	int		strlen;
 	int		i;
 	int		ii;
-	char	temp;
 
-	strlen = 0;
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	strlen = i;
-	strlen--;
-	i = i / 2;
+	i = len / 2;
+	len--;
 	ii = 0;
-	while (i > 0)
+	while (i-- > 0)
 	{
-		temp = str[strlen];
-		str[strlen] = str[ii];
-		str[ii] = temp;
-		strlen--;
+		ft_swap(&a[len], &a[ii], size);
+		len--;
 		ii++;
-		i--;
 	}
-	return (str);
+	return (a);
 }

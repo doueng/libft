@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dengstra <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/04/27 16:26:00 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/05/22 14:02:58 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
+void				*ft_arrayrev(void *a, size_t size, size_t len);
+char				*ft_itoa_base(size_t value, char *base);
 void				ft_swap(void *a, void *b, int size);
 void				ft_sort_integer_table(int *tab, int size);
 int					ft_sqrt(int nb);
 void				ft_foreach(int *tab, int length, void (*f)(int));
-int					ft_strrev(char *str);
+char					*ft_strrev(char *str);
 int					ft_atoi(const char *str);
 int					ft_atoi_base(char *str, char *base);
 void				ft_bzero(void *s, size_t n);
@@ -33,7 +35,7 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
-char				*ft_itoa(int n);
+char				*ft_itoa(long long n);
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -43,14 +45,15 @@ void				ft_memdel(void **ap);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_print_memory(void *addr, unsigned int size);
-void				ft_putchar(char c);
+int					ft_putchar(int c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int nb);
 void				ft_putnbr_base(int nbr, char *base);
 void				ft_putnbr_fd(int nb, int fd);
-void				ft_putstr(const char *str);
+int					ft_putstr(const char *str);
+int					ft_putstrfree(char *str);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putstr_non_printable(char *str);
 char				*ft_strcat(char *dest, char *src);

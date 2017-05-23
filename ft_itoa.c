@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static int		get_len(int n)
+static size_t		get_len(long long n)
 {
-	int count;
+	size_t count;
 
 	count = 1;
 	while ((n /= 10))
@@ -22,39 +22,28 @@ static int		get_len(int n)
 	return (count);
 }
 
-static char		*exceptions(int n)
-{
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == MIN_INT)
-		return (ft_strdup("-2147483648"));
-	return (NULL);
-}
-
-char			*ft_itoa(int n)
+char			*ft_itoa(long long n)
 {
 	int		minus;
-	int		len;
-	char	*str;
+	long long	len;
+	char		*str;
 
-	if (n == 0 || n == MIN_INT)
-		return (exceptions(n));
+	if (n == 0)
+		return (ft_strdup("0"));
 	minus = 0;
 	if (n < 0)
-	{
 		minus = 1;
-		n *= -1;
-	}
 	len = get_len(n);
-	len += minus;
-	if (!(str = (char*)malloc(len + 1)))
+	if (!(str = ft_strnew(len + minus)))
 		return (NULL);
 	if (minus)
 		str[0] = '-';
-	str[len--] = '\0';
 	while (n)
 	{
-		str[len--] = n % 10 + '0';
+		if (n < 0)
+			str[len--] = ((n % 10) * -1) + '0';
+		else
+			str[--len] = n % 10 + '0';
 		n /= 10;
 	}
 	return (str);

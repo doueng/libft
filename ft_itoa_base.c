@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 21:58:25 by dengstra          #+#    #+#             */
-/*   Updated: 2017/05/14 12:05:18 by douglas          ###   ########.fr       */
+/*   Created: 2017/05/08 16:46:43 by douglas           #+#    #+#             */
+/*   Updated: 2017/05/22 22:19:41 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+char	*ft_itoa_base(size_t value, char *base)
 {
-	int		strlen;
-	int		i;
-	int		ii;
-	char	temp;
+	char	*result;
+	size_t	len;
+	size_t	v;
+	size_t	b;
 
-	strlen = 0;
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	strlen = i;
-	strlen--;
-	i = i / 2;
-	ii = 0;
-	while (i > 0)
+	b = ft_strlen(base);
+	v = value;
+	len = 1;
+	while (v /= b)
+		len++;
+	result = ft_strnew(len);
+	if (!result)
+		return (NULL);
+	while (len--)
 	{
-		temp = str[strlen];
-		str[strlen] = str[ii];
-		str[ii] = temp;
-		strlen--;
-		ii++;
-		i--;
+		result[len] = base[value % b];
+		value /= b;
 	}
-	return (str);
+	return (result);
 }

@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 21:58:25 by dengstra          #+#    #+#             */
-/*   Updated: 2017/05/14 12:05:18 by douglas          ###   ########.fr       */
+/*   Created: 2017/05/19 12:47:59 by douglas           #+#    #+#             */
+/*   Updated: 2017/05/19 12:53:20 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+char	*ft_strndup(const char *src, size_t len)
 {
-	int		strlen;
-	int		i;
-	int		ii;
-	char	temp;
+	char	*str;
+	char	*temp;
 
-	strlen = 0;
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	strlen = i;
-	strlen--;
-	i = i / 2;
-	ii = 0;
-	while (i > 0)
-	{
-		temp = str[strlen];
-		str[strlen] = str[ii];
-		str[ii] = temp;
-		strlen--;
-		ii++;
-		i--;
-	}
+	str = ft_strnew(len);
+	if (!str)
+		return (NULL);
+	temp = str;
+	while (len--)
+		*temp++ = *src++;
 	return (str);
 }

@@ -3,16 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dengstra <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: douglas <douglas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/20 09:25:40 by dengstra          #+#    #+#              #
-#    Updated: 2017/04/25 14:49:38 by dengstra         ###   ########.fr        #
+#    Updated: 2017/05/22 20:00:15 by douglas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c	\
+	  ft_strjoinfree.c \
+	  ft_putstrfree.c \
+	  ft_strndup.c	\
+	  ft_arrayrev.c \
+	  ft_itoa_base.c	\
 	  ft_foreach.c	\
 	  ft_strrev.c	\
 	  ft_sort_integer_table.c	\
@@ -85,6 +90,7 @@ all: $(NAME)
 $(NAME):
 	gcc -Wextra -Wall -Werror -c $(SRC) $(HEADER)
 	ar rc $(NAME) $(SRCO)
+	ranlib $(NAME)
 
 clean:
 	/bin/rm -f $(SRCO)
