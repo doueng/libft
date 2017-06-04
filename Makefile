@@ -13,6 +13,7 @@
 NAME = libft.a
 
 SRC = ft_atoi.c	\
+	  get_next_line.c  \
 	  ft_strjoinfree.c \
 	  ft_putstrfree.c \
 	  ft_strndup.c	\
@@ -83,7 +84,7 @@ SRC = ft_atoi.c	\
 	  ft_toupper.c	\
 
 SRCO = $(SRC:.c=.o)
-HEADER = libft.h
+HEADER = -Ilibft.h -Iget_next_line.h
 
 all: $(NAME)
 
