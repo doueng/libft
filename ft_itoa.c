@@ -6,7 +6,7 @@
 /*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:10:59 by dengstra          #+#    #+#             */
-/*   Updated: 2017/04/18 12:08:20 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/06/04 16:10:46 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static size_t		get_len(long long n)
 	return (count);
 }
 
-char			*ft_itoa(long long n)
+char				*ft_itoa(long long n)
 {
-	int		minus;
+	int			minus;
 	long long	len;
 	char		*str;
 

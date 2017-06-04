@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/05/22 14:02:58 by douglas          ###   ########.fr       */
+/*   Updated: 2017/06/04 16:10:19 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void				ft_swap(void *a, void *b, int size);
 void				ft_sort_integer_table(int *tab, int size);
 int					ft_sqrt(int nb);
 void				ft_foreach(int *tab, int length, void (*f)(int));
-char					*ft_strrev(char *str);
+char				*ft_strrev(char *str);
 int					ft_atoi(const char *str);
 int					ft_atoi_base(char *str, char *base);
 void				ft_bzero(void *s, size_t n);
