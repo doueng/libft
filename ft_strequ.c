@@ -6,7 +6,7 @@
 /*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:14:14 by dengstra          #+#    #+#             */
-/*   Updated: 2017/04/18 11:14:14 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/06/08 18:39:05 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strequ(char const *s1, char const *s2)
 {
 	if (!s1 || !s2)
-		return (-1);
+		return (0);
 	if (ft_strcmp(s1, s2))
 		return (0);
 	return (1);
