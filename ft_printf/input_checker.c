@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   input_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/19 12:47:59 by douglas           #+#    #+#             */
-/*   Updated: 2017/06/04 16:03:08 by dengstra         ###   ########.fr       */
+/*   Created: 2017/05/23 13:30:04 by dengstra          #+#    #+#             */
+/*   Updated: 2017/06/05 17:57:40 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strndup(const char *src, size_t len)
+void	input_checker(t_id *id)
 {
-	char	*str;
-	char	*temp;
-
-	str = ft_strnew(len);
-	if (!str)
-		return (NULL);
-	temp = str;
-	while (len--)
-		*temp++ = *src++;
-	return (str);
+	while (id)
+	{
+		if (id->specifier == 'u' && id->plus)
+			id->plus = '\0';
+		id = id->next;
+	}
 }

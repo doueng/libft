@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   printstr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/19 12:47:59 by douglas           #+#    #+#             */
-/*   Updated: 2017/06/04 16:03:08 by dengstra         ###   ########.fr       */
+/*   Created: 2017/05/24 11:40:09 by douglas           #+#    #+#             */
+/*   Updated: 2017/06/06 13:50:18 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strndup(const char *src, size_t len)
+int		ft_printstr(char *str, t_id *id)
 {
-	char	*str;
-	char	*temp;
+	char	*tmp;
+	int		len;
 
-	str = ft_strnew(len);
-	if (!str)
-		return (NULL);
-	temp = str;
-	while (len--)
-		*temp++ = *src++;
-	return (str);
+	if (!str && !id->has_precision)
+		return (ft_putstr("(null)"));
+	if (id->specifier == '%')
+		id->has_precision = 0;
+	tmp = ft_strndup(str, (id->has_precision) ? id->precision : ft_strlen(str));
+	if (!tmp)
+		exit(-1);
+	len = ft_putstrfree(padding(tmp, id, 0));
+	free(tmp);
+	return (len);
 }

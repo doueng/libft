@@ -6,7 +6,7 @@
 /*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/06/04 16:10:19 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/06/08 17:41:40 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
+# include "ft_printf/ft_printf.h"
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
+int					ft_only_char(char *str, char c);
+char				*ft_strndup(const char *str, size_t len);
 void				*ft_arrayrev(void *a, size_t size, size_t len);
 char				*ft_itoa_base(size_t value, char *base);
 void				ft_swap(void *a, void *b, int size);

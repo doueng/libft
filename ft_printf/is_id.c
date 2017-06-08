@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   is_id.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/19 12:47:59 by douglas           #+#    #+#             */
-/*   Updated: 2017/06/04 16:03:08 by dengstra         ###   ########.fr       */
+/*   Created: 2017/05/06 15:31:38 by douglas           #+#    #+#             */
+/*   Updated: 2017/05/28 15:00:03 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strndup(const char *src, size_t len)
+char	ft_is_specifier(char c)
 {
-	char	*str;
-	char	*temp;
-
-	str = ft_strnew(len);
-	if (!str)
-		return (NULL);
-	temp = str;
-	while (len--)
-		*temp++ = *src++;
-	return (str);
+	if (!c)
+		return ('\0');
+	return (ft_strchr("%sSpdiDuUoOxXcCb", c) != NULL);
 }

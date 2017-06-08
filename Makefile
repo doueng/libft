@@ -6,14 +6,17 @@
 #    By: douglas <douglas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/20 09:25:40 by dengstra          #+#    #+#              #
-#    Updated: 2017/05/22 20:00:15 by douglas          ###   ########.fr        #
+#    Updated: 2017/06/08 17:37:37 by dengstra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c	\
-	  get_next_line.c  \
+	  ft_only_char.c	\
+	  ft_strndup.c		\
+	  get_next_line.c	\
+	  ft_is_int.c		\
 	  ft_strjoinfree.c \
 	  ft_putstrfree.c \
 	  ft_strndup.c	\
@@ -82,16 +85,27 @@ SRC = ft_atoi.c	\
 	  ft_strtrim.c	\
 	  ft_tolower.c	\
 	  ft_toupper.c	\
+	  ft_printf/ft_printf.c	\
+	  ft_printf/bytes.c	\
+	  ft_printf/get_flags.c	\
+	  ft_printf/input_checker.c	\
+	  ft_printf/is_id.c	\
+	  ft_printf/length_converter.c	\
+	  ft_printf/padding.c	\
+	  ft_printf/printer.c	\
+	  ft_printf/printnbr.c	\
+	  ft_printf/printstr.c	\
+	  ft_printf/putwstr.c
 
 SRCO = $(SRC:.c=.o)
-HEADER = -Ilibft.h -Iget_next_line.h
 
-all: $(NAME)
+all: $(SRCO) $(NAME)
 
 $(NAME):
-	gcc -Wextra -Wall -Werror -c $(SRC) $(HEADER)
 	ar rc $(NAME) $(SRCO)
-	ranlib $(NAME)
+
+%.o: %.c
+	@gcc -c $(FLAGS) $< -o $@
 
 clean:
 	/bin/rm -f $(SRCO)

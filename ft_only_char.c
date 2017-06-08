@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_only_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/19 12:47:59 by douglas           #+#    #+#             */
-/*   Updated: 2017/06/04 16:03:08 by dengstra         ###   ########.fr       */
+/*   Created: 2017/06/07 12:17:09 by dengstra          #+#    #+#             */
+/*   Updated: 2017/06/07 12:18:01 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strndup(const char *src, size_t len)
+int		ft_only_char(char *str, char c)
 {
-	char	*str;
-	char	*temp;
-
-	str = ft_strnew(len);
-	if (!str)
-		return (NULL);
-	temp = str;
-	while (len--)
-		*temp++ = *src++;
-	return (str);
+	while (*str)
+		if (*str++ != c)
+			return (0);
+	return (1);
 }
