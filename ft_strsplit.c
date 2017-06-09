@@ -63,7 +63,7 @@ static char				**spliter(const char *s, char c, char **split,
 	{
 		s = skip_c(s, c);
 		len = word_len(s, c);
-		split[i] = (char*)malloc(len);
+		split[i] = ft_strnew(len);
 		if (!split[i])
 			return (NULL);
 		ft_memmove(split[i], s, len);
