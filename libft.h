@@ -22,6 +22,7 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
+int				ft_is_int(char *str);
 int					ft_only_char(char *str, char c);
 char				*ft_strndup(const char *str, size_t len);
 void				*ft_arrayrev(void *a, size_t size, size_t len);
