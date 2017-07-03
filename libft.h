@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/06/08 17:41:40 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/07/02 13:35:49 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
-int				ft_is_int(char *str);
+void				ft_free_split(char **split);
+char				*ft_strcpytill(char *str, char c);
+int					ft_is_int(char *str);
 int					ft_only_char(char *str, char c);
 char				*ft_strndup(const char *str, size_t len);
 void				*ft_arrayrev(void *a, size_t size, size_t len);
@@ -104,4 +106,5 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstadd_rev(t_list **start, t_list *new);
 #endif

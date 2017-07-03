@@ -6,13 +6,16 @@
 #    By: douglas <douglas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/20 09:25:40 by dengstra          #+#    #+#              #
-#    Updated: 2017/06/08 17:37:37 by dengstra         ###   ########.fr        #
+#    Updated: 2017/07/03 13:55:51 by douglas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c	\
+	  ft_free_split.c	\
+	  ft_lstadd_rev.c	\
+	  ft_strcpytill.c	\
 	  ft_only_char.c	\
 	  ft_strndup.c		\
 	  get_next_line.c	\
@@ -99,9 +102,9 @@ SRC = ft_atoi.c	\
 
 SRCO = $(SRC:.c=.o)
 
-all: $(SRCO) $(NAME)
+all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRCO)
 	ar rc $(NAME) $(SRCO)
 
 %.o: %.c
