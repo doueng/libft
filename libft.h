@@ -6,7 +6,7 @@
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/02 13:35:49 by douglas          ###   ########.fr       */
+/*   Updated: 2017/07/03 15:54:36 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,15 @@
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
+
+#define NORMAL_COLOR "\x1B[0m"
+#define RED_COLOR "\x1B[31m"
+#define GREEN_COLOR "\x1B[32m"
+#define YELLOW_COLOR "\x1B[33m"
+#define BLUE_COLOR "\x1B[34m"
+#define MAGENTA_COLOR "\x1B[35m"
+#define CYAN_COLOR "\x1B[36m"
+#define WHITE_COLOR "\x1B[37m"
 
 void				ft_free_split(char **split);
 char				*ft_strcpytill(char *str, char c);
