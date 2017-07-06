@@ -6,13 +6,14 @@
 #    By: douglas <douglas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/20 09:25:40 by dengstra          #+#    #+#              #
-#    Updated: 2017/07/03 13:55:51 by douglas          ###   ########.fr        #
+#    Updated: 2017/07/03 20:52:59 by douglas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c	\
+	  ft_split_len.c	\
 	  ft_free_split.c	\
 	  ft_lstadd_rev.c	\
 	  ft_strcpytill.c	\
