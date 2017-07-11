@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   btree_apply_prefix.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:11:14 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/07 14:08:53 by douglas          ###   ########.fr       */
+/*   Created: 2017/03/25 22:17:13 by dengstra          #+#    #+#             */
+/*   Updated: 2017/07/06 22:08:14 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	btree_apply_prefix(t_btree *root, void (*applyf)(void *))
 {
-	t_list *tmp;
-
-	while (lst)
-	{
-		tmp = lst->next;
-		(*f)(lst);
-		lst = tmp;
-	}
+	if (!root)
+		return ;
+	(*applyf)(root->item);
+	if (root->left)
+		btree_apply_prefix(root->left, (*applyf));
+	if (root->right)
+		btree_apply_prefix(root->right, (*applyf));
 }

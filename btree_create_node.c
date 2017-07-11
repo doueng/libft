@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   btree_create_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:11:14 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/07 14:08:53 by douglas          ###   ########.fr       */
+/*   Created: 2017/03/25 21:39:46 by dengstra          #+#    #+#             */
+/*   Updated: 2017/07/06 22:09:14 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+t_btree *btree_create_node(void *item)
 {
-	t_list *tmp;
+	t_btree *t;
 
-	while (lst)
-	{
-		tmp = lst->next;
-		(*f)(lst);
-		lst = tmp;
-	}
+	t = (t_btree*)malloc(sizeof(t_btree));
+	t->left = NULL;
+	t->right = NULL;
+	t->item = item;
+	return (t);
 }

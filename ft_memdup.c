@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:11:14 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/07 14:08:53 by douglas          ###   ########.fr       */
+/*   Created: 2017/07/07 02:39:38 by douglas           #+#    #+#             */
+/*   Updated: 2017/07/07 02:43:59 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	*ft_memdup(void *mem, size_t size)
 {
-	t_list *tmp;
+	void *result;
 
-	while (lst)
-	{
-		tmp = lst->next;
-		(*f)(lst);
-		lst = tmp;
-	}
+	if (!(result = (void*)malloc(size)))
+		return (NULL);
+	return (ft_memcpy(result, mem, size));
 }

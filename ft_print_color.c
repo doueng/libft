@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_print_color.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:11:14 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/07 14:08:53 by douglas          ###   ########.fr       */
+/*   Created: 2017/07/11 18:18:12 by douglas           #+#    #+#             */
+/*   Updated: 2017/07/11 18:19:39 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lifbt.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_print_color(char *str, char *color)
 {
-	t_list *tmp;
-
-	while (lst)
-	{
-		tmp = lst->next;
-		(*f)(lst);
-		lst = tmp;
-	}
+	ft_putstr(color);
+	ft_putstr(str);
+	ft_putstr(NORMAL_COLOR);
 }

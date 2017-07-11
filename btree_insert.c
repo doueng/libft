@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   btree_insert.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:11:14 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/07 14:08:53 by douglas          ###   ########.fr       */
+/*   Created: 2017/07/07 12:08:10 by douglas           #+#    #+#             */
+/*   Updated: 2017/07/07 13:56:26 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *))
 {
-	t_list *tmp;
-
-	while (lst)
+	if (!(*root))
 	{
-		tmp = lst->next;
-		(*f)(lst);
-		lst = tmp;
+		*root = btree_create_node(item);
+		return ;
 	}
+	if ((*cmpf)((*root)->item, item) > 0)
+		btree_insert(&(*root)->right, item, cmpf);
+	if ((*cmpf)((*root)->item, item) <= 0)
+		btree_insert(&(*root)->left, item, cmpf);
 }

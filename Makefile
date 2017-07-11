@@ -6,13 +6,23 @@
 #    By: douglas <douglas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/20 09:25:40 by dengstra          #+#    #+#              #
-#    Updated: 2017/07/03 20:52:59 by douglas          ###   ########.fr        #
+#    Updated: 2017/07/09 02:05:07 by douglas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c	\
+	  btree_delone.c	\
+	  ft_memdup.c		\
+	  ft_free_list.c	\
+	  btree_free.c		\
+	  btree_apply_infix.c \
+	  btree_apply_prefix.c \
+	  btree_apply_suffix.c \
+	  btree_create_node.c \
+	  btree_insert.c \
+	  btree_search_item.c \
 	  ft_split_len.c	\
 	  ft_free_split.c	\
 	  ft_lstadd_rev.c	\

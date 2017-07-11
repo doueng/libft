@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/06 16:46:54 by dengstra         ###   ########.fr       */
+/*   Updated: 2017/07/09 15:46:23 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define CYAN_COLOR "\x1B[36m"
 # define WHITE_COLOR "\x1B[37m"
 
+char				*ft_strjoinfree(int free1, char *s1, int free2, char *s2);
+void				*ft_memdup(void *mem, size_t size);
 int					ft_split_len(char **split);
 void				ft_free_split(char **split);
 char				*ft_strcpytill(char *str, char c);
@@ -110,6 +112,24 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_btree
+{
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*item;
+}					t_btree;
+
+void				btree_free(t_btree **root, void (*free_item)(void*));
+void				btree_apply_infix(t_btree *root, void (*applyf)(void *));
+void				btree_apply_prefix(t_btree *root, void (*applyf)(void *));
+void				btree_apply_suffix(t_btree *root, void (*applyf)(void *));
+t_btree				*btree_create_node(void *item);
+void				btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
+void				*btree_search_item(t_btree *root, void *data_ref, int (*cmpf)(void *, void *));
+t_btree 			*btree_delone(t_btree *root, void *key, int (*cmp)(void *, void *),
+					void (*free_node)(void *));
+
+void				ft_free_list(t_list *start);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));

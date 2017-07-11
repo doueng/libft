@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_free_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 11:11:14 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/07 14:08:53 by douglas          ###   ########.fr       */
+/*   Created: 2017/07/07 14:09:04 by douglas           #+#    #+#             */
+/*   Updated: 2017/07/07 14:10:52 by douglas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+static void	free_node(t_list *node)
 {
-	t_list *tmp;
+	free(node->content);
+	free(node);
+}
 
-	while (lst)
-	{
-		tmp = lst->next;
-		(*f)(lst);
-		lst = tmp;
-	}
+void	ft_free_list(t_list *start)
+{
+	ft_lstiter(start, free_node);
 }
