@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: douglas <douglas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 11:50:53 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/09 15:46:23 by douglas          ###   ########.fr       */
+/*   Updated: 2017/07/13 14:37:26 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define CYAN_COLOR "\x1B[36m"
 # define WHITE_COLOR "\x1B[37m"
 
+void				ft_print_color(char *str, char *color);
+void				ft_print_till(char *str, char c);
 char				*ft_strjoinfree(int free1, char *s1, int free2, char *s2);
 void				*ft_memdup(void *mem, size_t size);
 int					ft_split_len(char **split);
@@ -119,16 +121,23 @@ typedef struct		s_btree
 	void			*item;
 }					t_btree;
 
+typedef struct		s_nth
+{
+	int				nth;
+	t_btree			*node;
+}					t_nth;
+
+t_nth				*btree_get_nth(t_btree *root, t_nth *nth);
+int					btree_num_nodes(t_btree *root);
 void				btree_free(t_btree **root, void (*free_item)(void*));
 void				btree_apply_infix(t_btree *root, void (*applyf)(void *));
 void				btree_apply_prefix(t_btree *root, void (*applyf)(void *));
 void				btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 t_btree				*btree_create_node(void *item);
-void				btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
-void				*btree_search_item(t_btree *root, void *data_ref, int (*cmpf)(void *, void *));
-t_btree 			*btree_delone(t_btree *root, void *key, int (*cmp)(void *, void *),
-					void (*free_node)(void *));
-
+void				btree_insert(t_btree **root, void *item,
+									int (*cmpf)(void *, void *));
+void				*btree_search_item(t_btree *root, void *data_ref,
+									void *res, int (*cmpf)(void *, void *));
 void				ft_free_list(t_list *start);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));

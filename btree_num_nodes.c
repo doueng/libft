@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create_node.c                                :+:      :+:    :+:   */
+/*   btree_num_nodes.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/25 21:39:46 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/13 14:34:49 by dengstra         ###   ########.fr       */
+/*   Created: 2017/07/12 14:32:58 by douglas           #+#    #+#             */
+/*   Updated: 2017/07/13 14:33:56 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_btree	*btree_create_node(void *item)
+int			btree_num_nodes(t_btree *root)
 {
-	t_btree *t;
-
-	t = (t_btree*)malloc(sizeof(t_btree));
-	t->left = NULL;
-	t->right = NULL;
-	t->item = item;
-	return (t);
+	if (!root)
+		return (0);
+	return (btree_num_nodes(root->left) + btree_num_nodes(root->right) + 1);
 }

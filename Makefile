@@ -6,14 +6,17 @@
 #    By: douglas <douglas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/20 09:25:40 by dengstra          #+#    #+#              #
-#    Updated: 2017/07/09 02:05:07 by douglas          ###   ########.fr        #
+#    Updated: 2017/07/13 14:36:59 by dengstra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_atoi.c	\
-	  btree_delone.c	\
+	  ft_print_color.c	\
+	  btree_get_nth.c	\
+	  btree_num_nodes.c	\
+	  ft_print_till.c	\
 	  ft_memdup.c		\
 	  ft_free_list.c	\
 	  btree_free.c		\

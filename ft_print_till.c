@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create_node.c                                :+:      :+:    :+:   */
+/*   ft_print_till.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/25 21:39:46 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/13 14:34:49 by dengstra         ###   ########.fr       */
+/*   Created: 2017/07/11 23:00:46 by douglas           #+#    #+#             */
+/*   Updated: 2017/07/13 14:33:19 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_btree	*btree_create_node(void *item)
+void		ft_print_till(char *str, char c)
 {
-	t_btree *t;
-
-	t = (t_btree*)malloc(sizeof(t_btree));
-	t->left = NULL;
-	t->right = NULL;
-	t->item = item;
-	return (t);
+	while (*str && *str != c)
+		ft_putchar(*str++);
 }

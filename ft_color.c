@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create_node.c                                :+:      :+:    :+:   */
+/*   ft_color.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dengstra <dengstra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/25 21:39:46 by dengstra          #+#    #+#             */
-/*   Updated: 2017/07/13 14:34:49 by dengstra         ###   ########.fr       */
+/*   Created: 2017/07/12 14:28:46 by douglas           #+#    #+#             */
+/*   Updated: 2017/07/13 14:33:43 by dengstra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_btree	*btree_create_node(void *item)
+void	ft_print_color(char *str, char *color)
 {
-	t_btree *t;
-
-	t = (t_btree*)malloc(sizeof(t_btree));
-	t->left = NULL;
-	t->right = NULL;
-	t->item = item;
-	return (t);
+	ft_putstr(color);
+	ft_putstr(str);
+	ft_putstr(NORMAL_COLOR);
 }
